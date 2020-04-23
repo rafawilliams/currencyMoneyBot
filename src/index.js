@@ -13,6 +13,12 @@ const PORT = process.env.PORT || 3000;
 server.use(Restify.plugins.bodyParser());
 server.use(Restify.plugins.jsonp());
 
+server.get("/", (req, res, next) => {
+
+    
+    res.end('<html><body>Currentbot is online</body></html>');
+    return next();
+});
 
 server.post("/", (req, res, next) => {
 
